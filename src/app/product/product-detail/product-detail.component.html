@@ -1,0 +1,148 @@
+
+<div class="card">
+  <div class="container-fliud">
+    <div class="wrapper row">
+      <div class="preview col-sm-6">
+
+        <div class="preview-pic tab-content">
+          <div class="tab-pane active" id="pic-1">
+            <img [src]="pdtDetail?.imagePathList[0]" />
+          </div>
+          <div class="tab-pane" id="pic-2">
+            <img [src]="pdtDetail?.imagePathList[0]" />
+          </div>
+          <div class="tab-pane" id="pic-3">
+            <img [src]="pdtDetail?.imagePathList[0]" />
+          </div>
+          <div class="tab-pane" id="pic-4">
+            <img [src]="pdtDetail?.imagePathList[0]" />
+          </div>
+          <div class="tab-pane" id="pic-5">
+            <img [src]="pdtDetail?.imagePathList[0]" />
+          </div>
+        </div>
+        <ul class="preview-thumbnail nav nav-tabs">
+          <li class="active">
+            <a data-target="#pic-1" data-toggle="tab">
+              <img [src]="pdtDetail?.imagePathList[0]" />
+            </a>
+          </li>
+          <li>
+            <a data-target="#pic-2" data-toggle="tab">
+              <img [src]="pdtDetail?.imagePathList[0]" />
+            </a>
+          </li>
+          <li>
+            <a data-target="#pic-3" data-toggle="tab">
+              <img [src]="pdtDetail?.imagePathList[0]" />
+            </a>
+          </li>
+          <li>
+            <a data-target="#pic-4" data-toggle="tab">
+              <img [src]="pdtDetail?.imagePathList[0]" />
+            </a>
+          </li>
+          <li>
+            <a data-target="#pic-5" data-toggle="tab">
+              <img [src]="pdtDetail?.imagePathList[0]" />
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
+      <div class="details col-sm-6">
+        <h3 class="product-title">{{pdtDetail?.name}}</h3>
+        <div class="rating">
+          <div class="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <span class="review-no">41 reviews</span>
+        </div>
+        <!-- <p class="product-description"> -->
+					<div class="product-description">
+						<ul class="list-group">
+								<li class="list-group-item">	{{pdtDetail?.description}}</li>
+								<li class="list-group-item">	{{pdtDetail?.brand.name}}</li>
+							
+							</ul>
+						</div>
+				<!-- </p> -->
+        <h4 class="price">current price:
+          <span>{{pdtDetail?.cost}}</span>
+        </h4>
+        <p class="vote">
+          <strong>91%</strong> of buyers enjoyed this product!
+          <strong>(87 votes)</strong>
+        </p>
+        <h5 class="sizes">sizes:
+          <span class="size" data-toggle="tooltip" title="small">s</span>
+          <span class="size" data-toggle="tooltip" title="medium">m</span>
+          <span class="size" data-toggle="tooltip" title="large">l</span>
+          <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+        </h5>
+        <h5 class="colors">colors:
+          <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+          <span class="color green"></span>
+          <span class="color blue"></span>
+        </h5>
+
+
+
+        <div class="action">
+          <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+          <button class="like btn btn-default" type="button">
+            <span class="fa fa-heart"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="well">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#spec1">Read More</button>
+  </div>
+
+  <div id="spec1" class="collapse">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Description</h1>
+      </div>
+      <div class="panel-body">
+        <div>
+            {{pdtDetail?.description}}
+        </div>
+      </div>
+		</div>
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1>Brand</h1>
+				</div>
+				<div class="panel-body">
+							<ul class="list-group">
+									<li class="list-group-item">{{pdtDetail?.brand.Id}}</li>
+									<li class="list-group-item">	{{pdtDetail?.brand.name}}</li>
+									<li class="list-group-item">	{{pdtDetail?.brand.description}}</li>
+								</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1>Seller</h1>
+					</div>
+					<div class="panel-body">
+							<ul class="list-group">
+									<li class="list-group-item">{{pdtDetail?.seller.Id}}</li>
+									<li class="list-group-item">	{{pdtDetail?.seller.name}}</li>
+									<li class="list-group-item">	{{pdtDetail?.seller.Address}}</li>
+								</ul>
+					</div>
+				</div>
+  </div>

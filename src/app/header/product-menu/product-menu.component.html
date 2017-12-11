@@ -1,0 +1,37 @@
+<ul class="nav navbar-nav">
+        <li  appPrivilageCheck="cloth"><a #menuPointer (click)="onMenuSelect($event)">Clothes</a></li>
+        <li  appPrivilageCheck="elect">
+            <a  class="dropdown-toggle" data-toggle="dropdown">Electronics<b class="caret"></b></a>
+            <ul class="dropdown-menu multi-level">
+                <li appPrivilageCheck="telev"><a href="#" (click)="onMenuSelect($event)">TV</a></li>
+                
+                <li class="divider"></li>
+                <li class="dropdown-submenu" appPrivilageCheck="mobil">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mobiles</a>
+                    <ul class="dropdown-menu">
+                        <li appPrivilageCheck="smart"><a  #menuPointer (click)="onMenuSelect($event)">Smart Phones</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu" appPrivilageCheck="featu">
+                            <a  class="dropdown-toggle" data-toggle="dropdown" #menuPointer (click)="onMenuSelect($event)">Feature Phones</a>
+                            <!-- <ul class="dropdown-menu">
+                               <li><a>Action</a></li>
+                            </ul> -->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!-- <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+                
+            </ul>
+        </li> -->
+    </ul>

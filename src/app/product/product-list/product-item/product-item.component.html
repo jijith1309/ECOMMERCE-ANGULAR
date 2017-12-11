@@ -1,0 +1,15 @@
+<a 
+[routerLink]=[product.Id]
+routerLinkActive="active"
+style="cursor: pointer">
+    <div class="col-sm-4">
+        <div class="thumbnail">
+          <img [src]="product?.imagePath" alt="" width="400" max-height="300">
+          <p>
+            <strong>{{product.name}}</strong>
+          </p>
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+</a>
+

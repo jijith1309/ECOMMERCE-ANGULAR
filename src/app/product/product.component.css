@@ -1,0 +1,36 @@
+.filterSection{
+    position: fixed;
+    left: 0;
+    top: 30px;
+    bottom: 0;
+    /* color: #fff; */
+    /* background-color: #205a67; */
+    padding-top: 50px;
+    -o-transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+    width: 250px;
+    z-index: 900;
+    /* background: #205a67 url('../images/menu-pattern.png') no-repeat; */
+    background-position: bottom center;
+}
+.pdtListSection{
+    width: auto;
+    padding: 15px;
+    position: relative;
+    margin-left: 250px;
+    background-color: #d7d5d5;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -o-transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+}
+.innerNav{
+    display: inline-block;
+}

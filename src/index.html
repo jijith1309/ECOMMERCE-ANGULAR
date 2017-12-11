@@ -7,6 +7,19 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+        $(this).parent().siblings().removeClass('open');
+        $(this).parent().toggleClass('open');
+      });
+    });
+  </script>
 </head>
 <body>
   <app-root></app-root>
