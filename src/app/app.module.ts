@@ -26,6 +26,11 @@ import { LoadingIndicatorComponent } from './shared/loading-indicator/loading-in
 import { TreeViewComponent } from './header/tree-view/tree-view.component';
 import { PrivilageCheckDirective } from './header/menu-display.directive';
 import { CartComponent } from './checkout/cart/cart.component';
+import { CheckoutService } from './core/services/checkout.services';
+
+
+import { CartItemComponent } from './checkout/cart/components/cart-list/cart-item/cart-item.component';
+import { CartListComponent } from './checkout/cart/components/cart-list/cart-list.component';
 
 
 @NgModule({
@@ -44,7 +49,9 @@ import { CartComponent } from './checkout/cart/cart.component';
     LoadingIndicatorComponent,
     TreeViewComponent,
     PrivilageCheckDirective,
-    CartComponent
+    CartComponent,
+    CartListComponent,
+    CartItemComponent
    
   ],
   imports: [
@@ -61,8 +68,8 @@ import { CartComponent } from './checkout/cart/cart.component';
               AuthGuard,
               ProductService,
               HeaderService,
-              LoaderService
-            
+              LoaderService,
+              CheckoutService
              ],
   bootstrap: [AppComponent]
 })

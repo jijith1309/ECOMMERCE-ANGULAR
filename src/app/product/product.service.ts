@@ -12,8 +12,8 @@ import { Subject } from "rxjs";
 @Injectable()
 export class ProductService {
  static tempImage="https://cdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-4-sn.jpg";
-//  moduleId:number=1;
 
+moduleId:number;
 menuSelChange=new Subject<number>();
 
  products:Product[]=[];
@@ -86,7 +86,8 @@ menuSelChange=new Subject<number>();
         this.hdrservice.menuChanged.subscribe(
         (id:number)=>{
             this.menuSelChange.next(id) ;
-         console.log('menu Change Subs'+id);
+            console.log('pdt service Subs'+id);
+            this.moduleId=id;
         //   this.BindInitialProducts(this.moduleId);
         });
       }

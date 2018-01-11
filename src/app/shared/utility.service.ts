@@ -9,9 +9,12 @@ import { Subject } from "rxjs/Subject";
 export class UtilityService
 {
      baseUrl="http://ecommerceservices.azurewebsites.net/";
-     headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+     headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8','Authorization':this.RetrieveToken() });
      options = new RequestOptions({ headers: this.headers });
-
+     
+     RetrieveToken (){
+      return  JSON.parse(localStorage.getItem('UserToken'));
+      }
      public loading = new Subject<{loading: boolean, hasError: boolean, hasMsg: string}>();
      
     constructor(private http:Http)
@@ -19,8 +22,8 @@ export class UtilityService
 
     }
     GetData(url:string){
-        this.requestInterceptor();
-       return this.http.get(url).map( (response:Response)=>{
+      this.requestInterceptor();
+       return this.http.get(url,this.options).map( (response:Response)=>{
         return response.json();
     })
         .catch(this.onCatch.bind(this))
@@ -78,10 +81,12 @@ export class UtilityService
       }
       private responseInterceptor(): void {
         console.log('Request Complete');
-        // this.loaderService.hidePreloader();
+        this.loading.next({
+          loading: false, hasError: false, hasMsg: ''
+        });
       }
       private onCatch(error: any, caught: Observable<any>): Observable<any> {
-        debugger
+        
         var errResponse=error.json();
         console.log('Catch', errResponse);
         // this.loaderService.popError();
@@ -95,5 +100,6 @@ export class UtilityService
         });
       }
     
+      
 
 }

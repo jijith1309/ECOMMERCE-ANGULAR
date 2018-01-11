@@ -14,7 +14,7 @@ const appRoutes: Routes =[
         
         {  path: 'product', component: ProductComponent,canActivate :[AuthGuard] ,
         children:[
-            { path: '', component: ProductListComponent },
+            { path: '', component: ProductComponent },
             { path: ':id', component: ProductDetailComponent },
           ]
         },
@@ -23,7 +23,15 @@ const appRoutes: Routes =[
         {  path: 'signup', component: SignupComponent  },
         {  path: 'signin', component: SigninComponent  },
 
-        {  path: 'cart', component: CartComponent  },
+
+        {  path: 'checkout', component: CartComponent ,
+        children:[
+            { path: 'cart', component: CartComponent },
+            // { path: ':id', component: ProductDetailComponent },
+          ]
+        }
+
+        // {  path: 'cart', component: CartComponent  },
        
 ];
 

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Product } from '../Model/product.model';
 import { ProductService } from '../product.service';
-import { ProductMenuComponent } from '../../header/product-menu/product-menu.component';
+
 import { HeaderService } from '../../header/header.service';
+import { Input } from '@angular/core/src/metadata/directives';
 
 
 @Component({
@@ -44,17 +45,18 @@ import { HeaderService } from '../../header/header.service';
 //   }
 // }
 export class ProductListComponent implements OnInit {
-  moduleId:number=1;
+ moduleId:number=1;
   products:Product[]=[];
-  constructor(private pdtService:ProductService,
-    private hdrservice:HeaderService
+  constructor(private pdtService:ProductService
   ) { }
 
   ngOnInit() {
+    
    this.BindMenuSelection();
   }
 
   BindInitialProducts(Id:number){
+    
     this.products.length=0;
     this.pdtService.GetProducts(Id.toString()).subscribe(
       data=>{
@@ -64,14 +66,15 @@ export class ProductListComponent implements OnInit {
     );
   }
   BindMenuSelection(){
-    this.hdrservice.menuChanged.subscribe(
-    (id:number)=>{
-      this.moduleId=id;
-      console.log('menu Change Subs'+id);
-      this.BindInitialProducts(this.moduleId);
-    });
+    
+    // this.hdrservice.menuChanged.subscribe(
+    // (id:number)=>{
+    //   this.moduleId=id;
+    //   console.log('menu Change Subs'+id);
+    //   this.BindInitialProducts(this.moduleId);
+    // });
+    // this.moduleId =this.pdtService.moduleId;
+    this.BindInitialProducts(this.moduleId);
   }
-  ngOnDestroy(){
-  // this.hdrservice.menuChanged.unsubscribe();
-  }
+ 
 }

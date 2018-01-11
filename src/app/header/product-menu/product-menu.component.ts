@@ -35,7 +35,7 @@ export class ProductMenuComponent implements OnInit {
     });
   }
   onMenuSelect(event:any){
-    console.log('Menu Selected: '+event.target.parentElement.id);
+    // console.log('Menu Selected: '+event.target.parentElement.id);
     this.hdrService.menuChanged.next(event.target.parentElement.id);
   }
 }
