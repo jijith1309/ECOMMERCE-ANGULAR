@@ -19,7 +19,7 @@
           </thead>
           <tbody>
               
-            <tr app-cart-item *ngFor="let cartitem of cart.cartItemList; let i=index"
+            <tr app-cart-item *ngFor="let cartitem of cart?.cartItemList; let i=index"
             [cartItem]="cartitem"
             [index]="i"
             [cartid]="cart.cartId">

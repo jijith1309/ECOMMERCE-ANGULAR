@@ -22,6 +22,7 @@ export class UtilityService
 
     }
     GetData(url:string){
+      debugger
       this.requestInterceptor();
        return this.http.get(url,this.options).map( (response:Response)=>{
         return response.json();
