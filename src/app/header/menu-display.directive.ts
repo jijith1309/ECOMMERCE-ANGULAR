@@ -39,10 +39,13 @@ export class PrivilageCheckDirective implements OnInit{
     BindPrivilages(){
        
         var privilageList=JSON.parse(localStorage.getItem('UserPrivilages'));
-        for(var i=0;i<privilageList.length;i++){
-            let temp=new MenuCode(privilageList[i].ModuleId,privilageList[i].Code);
-            this.menuArray.push(temp);
+        if(privilageList!=null&&privilageList!=undefined){
+            for(var i=0;i<privilageList.length;i++){
+                let temp=new MenuCode(privilageList[i].ModuleId,privilageList[i].Code);
+                this.menuArray.push(temp);
+            }
         }
+       
         
     }
      search(nameKey:string, myArray:Array<MenuCode>){
