@@ -7,14 +7,17 @@ import { AuthGuard } from './auth/auth.guard.service';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { CartComponent } from './checkout/cart/cart.component';
+import { ProductStartComponent } from './product/product-start/product-start.component';
 
 
 const appRoutes: Routes =[
         {  path: '', redirectTo:'/product',pathMatch:'full' },
         
-        {  path: 'product', component: ProductComponent,canActivate :[AuthGuard] ,
+        // {  path: 'product', component: ProductComponent,canActivate :[AuthGuard] ,
+        {  path: 'product', component: ProductComponent ,
         children:[
-            { path: '', component: ProductComponent },
+            { path: '', component: ProductStartComponent },
+            // { path: '', component: ProductComponent },
             { path: ':id', component: ProductDetailComponent },
           ]
         },

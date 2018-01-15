@@ -18,9 +18,10 @@ export class ProductDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    
+   
     this.route.params.subscribe(
       (params:Params)=>{
+        debugger
         this.id = +params['id'];
         this.InitproductDetails();
       }
@@ -29,11 +30,8 @@ export class ProductDetailComponent implements OnInit {
   InitproductDetails(){
     this.pdtService.GetProductDetails(this.id).subscribe(
       (product:ProductDetail)=>{
-        ;
         this.pdtDetail=product;
         console.log(product);
-         
-    
       }
      );
   }

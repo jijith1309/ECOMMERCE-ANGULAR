@@ -31,6 +31,7 @@ import { CheckoutService } from './core/services/checkout.services';
 
 import { CartItemComponent } from './checkout/cart/components/cart-list/cart-item/cart-item.component';
 import { CartListComponent } from './checkout/cart/components/cart-list/cart-list.component';
+import { ProductStartComponent } from './product/product-start/product-start.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CartListComponent } from './checkout/cart/components/cart-list/cart-lis
     PrivilageCheckDirective,
     CartComponent,
     CartListComponent,
-    CartItemComponent
+    CartItemComponent,
+    ProductStartComponent
    
   ],
   imports: [
