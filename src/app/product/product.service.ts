@@ -62,7 +62,7 @@ menuSelChange=new Subject<number>();
         let productUrl = this.utlService.baseUrl + 'api/v1/Product/ProductDetails/'+productId;
           return  this.utlService.GetData(productUrl).map(
             data=>{
-                ;
+                
                 let pdt=data.Data;
                 let brand=new Brand(pdt.Brand.BrandId,pdt.Brand.BrandName,pdt.Brand.Description);
                 let seller= new Seller(pdt.Seller.SellerId,pdt.Seller.Name,pdt.Seller.Address);  

@@ -59,4 +59,18 @@ export class CheckoutService {
       
       });
   }
+  AddToCart(productId:number,qty:number){
+    console.log('check out service'+productId)
+    let addcartUrl=this.utlService.baseUrl+'api/v1/Order/AddToCart';
+    var body={
+          'ProductId':productId,
+          'Quantity':qty
+    };
+    var payload=JSON.stringify(body) ;
+    this.utlService.PostData(addcartUrl,payload).subscribe(
+       data=>{
+           console.log(data);
+       }
+   );
+  }
 }
