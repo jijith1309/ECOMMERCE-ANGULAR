@@ -9,22 +9,20 @@ import { Subject } from "rxjs/Subject";
 export class UtilityService
 {
      baseUrl="http://ecommerceservices.azurewebsites.net/";
-     headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8','Authorization':this.RetrieveToken() });
-     options = new RequestOptions({ headers: this.headers });
-     
-     RetrieveToken (){
-      return  JSON.parse(localStorage.getItem('UserToken'));
-      }
+   
      public loading = new Subject<{loading: boolean, hasError: boolean, hasMsg: string}>();
      
     constructor(private http:Http)
     {
 
     }
+
+
     GetData(url:string){
-      debugger
+      
+      let options=this.createAuthorizationHeader();
       this.requestInterceptor();
-       return this.http.get(url,this.options).map( (response:Response)=>{
+       return this.http.get(url,options).map( (response:Response)=>{
         return response.json();
     })
         .catch(this.onCatch.bind(this))
@@ -39,10 +37,10 @@ export class UtilityService
     
     }
     PostData(url:string,body:any){
-     
+      let options=this.createAuthorizationHeader();
       this.requestInterceptor();
 
-      return this.http.post(url,body,this.options).map(
+      return this.http.post(url,body,options).map(
         (response:Response)=>{
             return response.json();
         }
@@ -103,4 +101,13 @@ export class UtilityService
     
       
 
+      RetrieveToken (){
+        return  JSON.parse(localStorage.getItem('UserToken'));
+        }
+
+        createAuthorizationHeader() {
+          let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8','Authorization':this.RetrieveToken() });
+          return  new RequestOptions({ headers: headers });
+        }
+    
 }

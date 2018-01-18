@@ -23,7 +23,7 @@ export class ProductDetailComponent implements OnInit {
    
     this.route.params.subscribe(
       (params:Params)=>{
-        debugger
+        
         this.id = +params['id'];
         this.InitproductDetails();
       }

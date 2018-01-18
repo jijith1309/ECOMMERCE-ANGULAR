@@ -24,7 +24,7 @@ menuSelChange=new Subject<number>();
        ) {}
 
     GetProducts(moduleId: string) {
-        debugger
+        
         this.loaderService.display(true);
         let pdtArray:Product[]=[];
         
