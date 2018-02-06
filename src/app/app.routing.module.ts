@@ -11,30 +11,7 @@ import { ProductStartComponent } from './product/product-start/product-start.com
 
 
 const appRoutes: Routes =[
-        {  path: '', redirectTo:'/product',pathMatch:'full' },
-        
-        // {  path: 'product', component: ProductComponent,canActivate :[AuthGuard] ,
-        {  path: 'product', component: ProductComponent ,
-        children:[
-            { path: '', component: ProductStartComponent },
-            // { path: '', component: ProductComponent },
-            { path: ':id', component: ProductDetailComponent },
-          ]
-        },
-       
-
-        // {  path: 'signup', component: SignupComponent  },
-        // {  path: 'signin', component: SigninComponent  },
-
-
-        {  path: 'checkout', component: CartComponent ,
-        children:[
-            { path: 'cart', component: CartComponent },
-            // { path: ':id', component: ProductDetailComponent },
-          ]
-        }
-
-        // {  path: 'cart', component: CartComponent  },
+        {  path: '', redirectTo:'/product',pathMatch:'full' }
        
 ];
 
