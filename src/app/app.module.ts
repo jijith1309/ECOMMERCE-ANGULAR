@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header/header.component';
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
+
 import { AppRoutingModule } from './app.routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
@@ -32,14 +31,14 @@ import { CheckoutService } from './core/services/checkout.services';
 import { CartItemComponent } from './checkout/cart/components/cart-list/cart-item/cart-item.component';
 import { CartListComponent } from './checkout/cart/components/cart-list/cart-list.component';
 import { ProductStartComponent } from './product/product-start/product-start.component';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SigninComponent,
-    SignupComponent,
+  
     FooterComponent,
     ProductComponent,
     ProductListComponent,
@@ -60,6 +59,7 @@ import { ProductStartComponent } from './product/product-start/product-start.com
     BrowserModule,
     FormsModule,
     HttpModule,
+    AuthModule,
     ReactiveFormsModule,
     AppRoutingModule
     // LoadingModule

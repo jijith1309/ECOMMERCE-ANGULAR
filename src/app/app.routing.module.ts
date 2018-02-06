@@ -23,8 +23,8 @@ const appRoutes: Routes =[
         },
        
 
-        {  path: 'signup', component: SignupComponent  },
-        {  path: 'signin', component: SigninComponent  },
+        // {  path: 'signup', component: SignupComponent  },
+        // {  path: 'signin', component: SigninComponent  },
 
 
         {  path: 'checkout', component: CartComponent ,
