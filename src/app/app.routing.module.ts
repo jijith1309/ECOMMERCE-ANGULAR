@@ -7,31 +7,11 @@ import { AuthGuard } from './auth/auth.guard.service';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { CartComponent } from './checkout/cart/cart.component';
+import { ProductStartComponent } from './product/product-start/product-start.component';
 
 
 const appRoutes: Routes =[
-        {  path: '', redirectTo:'/product',pathMatch:'full' },
-        
-        {  path: 'product', component: ProductComponent,canActivate :[AuthGuard] ,
-        children:[
-            { path: '', component: ProductComponent },
-            { path: ':id', component: ProductDetailComponent },
-          ]
-        },
-       
-
-        {  path: 'signup', component: SignupComponent  },
-        {  path: 'signin', component: SigninComponent  },
-
-
-        {  path: 'checkout', component: CartComponent ,
-        children:[
-            { path: 'cart', component: CartComponent },
-            // { path: ':id', component: ProductDetailComponent },
-          ]
-        }
-
-        // {  path: 'cart', component: CartComponent  },
+        {  path: '', redirectTo:'/product',pathMatch:'full' }
        
 ];
 

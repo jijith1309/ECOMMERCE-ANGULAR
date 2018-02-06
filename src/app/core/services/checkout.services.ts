@@ -21,15 +21,15 @@ export class CheckoutService {
 
   GetCartDetails(){
       let cart:Cart;
-
+      
       this.loaderService.display(true);
 
       let cartUrl = this.utlService.baseUrl + 'api/v1/Order/MyCart';
 
       return  this.utlService.GetData(cartUrl).map(data=>{
-        console.log('CheckOut Service:'+data);
+      
         let cartData=data.Data;
-
+        console.log('CheckOut Service:'+cartData);
         if(cartData!='undefined' && cartData!=null){
           // cart.cartId=cartData.CartId;
 
@@ -45,7 +45,7 @@ export class CheckoutService {
                 cartPdt.productId==cartItemList[i].CartProduct.ProductId;
                 cartPdt.productCost=cartItemList[i].CartProduct.ProductPrice;
                 cartPdt.productImage=cartItemList[i].CartProduct.DefImage;
-                cartPdt.productQty=1;
+                cartPdt.productQty=cartItemList[i].CartProduct.ProductQty;
                 cartPdt.productName=cartItemList[i].CartProduct.ProductName;
 
                 cartitem.cartProduct=cartPdt;
@@ -58,5 +58,33 @@ export class CheckoutService {
       }
       
       });
+  }
+  AddToCart(productId:number,qty:number){
+   
+    let addcartUrl=this.utlService.baseUrl+'api/v1/Order/AddToCart';
+    var body={
+          'ProductId':productId,
+          'Quantity':qty
+    };
+    var payload=JSON.stringify(body) ;
+    this.utlService.PostData(addcartUrl,payload).subscribe(
+       data=>{
+         console.log(data)
+         if(data.Data){
+          this.utlService.ShowMessage(data.Message)
+        }
+       }
+   );
+  }
+  DeleteCartItem(cartItemId:number){
+   let delCartUrl=this.utlService.baseUrl+'api/v1/Order/DeleteCartItem/'+cartItemId;
+   this.utlService.GetData(delCartUrl).subscribe(
+    data=>{
+      console.log(data)
+        if(data.Data){
+          this.utlService.ShowMessage(data.Message)
+        }
+    }
+);
   }
 }

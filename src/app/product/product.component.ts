@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-   moduleSel:number=1;
+  moduleSel:number=1;
   subscription:Subscription;
   constructor(private pdtService:ProductService
   ) { }
