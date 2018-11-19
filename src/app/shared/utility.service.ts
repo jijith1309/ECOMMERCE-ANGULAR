@@ -8,7 +8,7 @@ import { Subject } from "rxjs/Subject";
 @Injectable()
 export class UtilityService
 {
-     baseUrl="http://ecommerceservices.azurewebsites.net/";
+     baseUrl="";
      headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
      options = new RequestOptions({ headers: this.headers });
 
